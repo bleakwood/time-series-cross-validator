@@ -54,7 +54,7 @@ def cross_validate(data: np.ndarray, print_metrics: bool = False):
 
 def backtest(data: np.ndarray,
              stride: int = 1,
-             start_ratio: float = 0.5,
+             start_ratio: float = 0.9,
              retrain: bool = True,
              retrain_every: int = 1,
              print_metrics=False,
