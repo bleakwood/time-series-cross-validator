@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Dense, SimpleRNN, Reshape, Lambda, Input
 from tensorflow.keras import Model
 from ts_boilerplate.params import DATA, TRAIN
+from sklearn.linear_model import LinearRegression
 
 # TODO: Should we add here the preprocessing? into a class called "pipeline"?
 # TODO: Should we refacto in a class ? Probably!
@@ -21,7 +22,7 @@ def get_model(X_train, y_train):
             axis=1)
         )(input)
     output = Reshape(y_train.shape[1:])(x)
-    model = Model(input, output)
+    model = LinearRegression(input, output)
 
     # # THE SIMPLEST OF ALL POSSIBLE RNN
     # model = tf.keras.Sequential()
